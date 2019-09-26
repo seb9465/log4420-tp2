@@ -74,7 +74,9 @@ const daysToChristmas = (date) => {
  * @returns {Array} Tableau sans éléments dupliqués
  */
 const distinct = (arr) => {
-	
+	return arr.filter((elem, index) => {
+		return arr.indexOf(elem) >= index;
+	});
 }
 
 /**
@@ -89,9 +91,12 @@ const distinct = (arr) => {
  * @param {Object} obj2 - Deuxième objet
  * @returns {Array} Tableau qui contient les cléfs partagées entre deux objets
  */
-const commonKeys = undefined
+const commonKeys = (obj1, obj2) => {
+	const key1 = Object.keys(obj1);
+	const key2 = Object.keys(obj2);
 
-// Object.keys(obj)
+	return key1.filter((elem) => key2.indexOf(elem) !== -1);
+}
 
 /**
  * Renvoie un tableau trié selon le champ 'author' d'un objet. Si deux objets
