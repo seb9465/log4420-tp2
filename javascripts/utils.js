@@ -55,11 +55,11 @@ const charCounts = (str) => {
  * @returns {number} Nombre de jours jusqu'à Noël prochain.
  */
 const daysToChristmas = (date) => {
-  const year = (date.getMonth() === 11 && date.getDate() > 25) ? date.getFullYear() + 1 : date.getFullYear();
-  const nextChristmas = new Date(year, 11, 25);
-  const dateDiff = Math.abs(nextChristmas - date);
-  
-  return Math.ceil(dateDiff / (1000 * 60 * 60 * 24));
+	const year = (date.getMonth() === 11 && date.getDate() > 25) ? date.getFullYear() + 1 : date.getFullYear();
+	const nextChristmas = new Date(year, 11, 25);
+	const dateDiff = Math.abs(nextChristmas - date);
+
+	return Math.ceil(dateDiff / (1000 * 60 * 60 * 24));
 }
 
 /**
@@ -73,7 +73,9 @@ const daysToChristmas = (date) => {
  * @param {Array} arr - Tableau avec potentiellement des éléments dupliqués
  * @returns {Array} Tableau sans éléments dupliqués
  */
-const distinct = undefined
+const distinct = (arr) => {
+	
+}
 
 /**
  * Renvoie un tableau qui contient les clés partagées entre deux objets Javascript.
@@ -139,7 +141,7 @@ const curry3 = undefined
  * @returns {Array}
  */
 function map(arr, callback) {
-  return undefined
+	return undefined
 }
 
 /**
@@ -159,7 +161,7 @@ function map(arr, callback) {
  * @returns {Array}
  */
 function find(arr, predicate) {
-  return undefined
+	return undefined
 }
 
 /**
@@ -194,7 +196,7 @@ function find(arr, predicate) {
  * @returns {S} Accumulateur
  */
 function fold(arr, init, op) {
-  return undefined
+	return undefined
 }
 
 /**
@@ -227,16 +229,16 @@ class Chercheur {
 }
 
 export {
-  genererCompteur,
-  charCounts,
-  daysToChristmas,
-  distinct,
-  commonKeys,
-  sortByAuthorAndTitle,
-  curry3,
-  map,
-  find,
-  fold,
-  Employee,
-  Chercheur
+	genererCompteur,
+	charCounts,
+	daysToChristmas,
+	distinct,
+	commonKeys,
+	sortByAuthorAndTitle,
+	curry3,
+	map,
+	find,
+	fold,
+	Employee,
+	Chercheur
 }
