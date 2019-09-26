@@ -29,8 +29,7 @@ const genererCompteur = (x) => {
 const charCounts = (str) => {
 	let dict = {};
 
-	for (let i = 0; i < str.length; i++) {
-		const letter = str.charAt(i).toLowerCase();
+	str.toLowerCase().split("").map(letter => {
 		if (letter.match(/[a-z]/i)) {
 			if (letter in dict) {
 				dict[letter] += 1;
@@ -38,10 +37,14 @@ const charCounts = (str) => {
 				dict[letter] = 1;
 			}
 		}
-	}
+	});
 
 	return dict;
 }
+
+// acc : accumulateur
+// x : élément dans lequel on itère
+a.reduce((acc, x) => acc + x, 0 /* valeur par défaut */) // => somme des éléments d'un tableau
 
 /**
  * Retourne un entier qui représente le nombre de jours restants jusqu'au prochain jour de Noël.
