@@ -44,7 +44,7 @@ const charCounts = (str) => {
 
 // acc : accumulateur
 // x : élément dans lequel on itère
-a.reduce((acc, x) => acc + x, 0 /* valeur par défaut */) // => somme des éléments d'un tableau
+// a.reduce((acc, x) => acc + x, 0 /* valeur par défaut */) // => somme des éléments d'un tableau
 
 /**
  * Retourne un entier qui représente le nombre de jours restants jusqu'au prochain jour de Noël.
@@ -54,7 +54,13 @@ a.reduce((acc, x) => acc + x, 0 /* valeur par défaut */) // => somme des élém
  * @param {Date} date - Objet de Date
  * @returns {number} Nombre de jours jusqu'à Noël prochain.
  */
-const daysToChristmas = undefined
+const daysToChristmas = (date) => {
+  const year = (date.getMonth() === 11 && date.getDate() > 25) ? date.getFullYear() + 1 : date.getFullYear();
+  const nextChristmas = new Date(year, 11, 25);
+  const dateDiff = Math.abs(nextChristmas - date);
+  
+  return Math.ceil(dateDiff / (1000 * 60 * 60 * 24));
+}
 
 /**
  * Renvoie un tableau sans éléments dupliqués.
