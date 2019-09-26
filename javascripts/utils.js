@@ -8,7 +8,11 @@
  * genererCompteur() // Renvoie 2
  * genererCompteur() // Renvoie 3
  */
-const genererCompteur = undefined
+const genererCompteur = (x) => {
+	return () => {
+		return x += 1;
+	}
+}
 
 /**
  * Retourne un object Javascript qui contient en clé les lettres de la châine
@@ -22,7 +26,22 @@ const genererCompteur = undefined
  * @param {string} str - Chaîne de caractère
  * @returns {Object<string, number>}
  */
-const charCounts = undefined
+const charCounts = (str) => {
+	let dict = {};
+
+	for (let i = 0; i < str.length; i++) {
+		const letter = str.charAt(i).toLowerCase();
+		if (letter.match(/[a-z]/i)) {
+			if (letter in dict) {
+				dict[letter] += 1;
+			} else {
+				dict[letter] = 1;
+			}
+		}
+	}
+
+	return dict;
+}
 
 /**
  * Retourne un entier qui représente le nombre de jours restants jusqu'au prochain jour de Noël.
@@ -60,6 +79,8 @@ const distinct = undefined
  * @returns {Array} Tableau qui contient les cléfs partagées entre deux objets
  */
 const commonKeys = undefined
+
+// Object.keys(obj)
 
 /**
  * Renvoie un tableau trié selon le champ 'author' d'un objet. Si deux objets
