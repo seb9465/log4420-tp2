@@ -10,15 +10,15 @@
   },
   "author": "Konstantinos Lambrou-Latreille",
   "devDependencies": {
-    "node-static": "^0.7.11",
-    "pug": "^2.0.4",
-    "pug-cli": "^1.0.0-alpha6",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
-    "nightwatch": "^0.9.16",
-    "nightwatch-custom-commands-assertions": "^1.1.0"
+    "nightwatch": "^1.2.4",
+    "nightwatch-custom-commands-assertions": "^1.1.0",
+    "node-static": "^0.7.11",
+    "pug": "^2.0.4",
+    "pug-cli": "^1.0.0-alpha6"
   },
   "dependencies": {
     "chromedriver": "^77.0.0",
