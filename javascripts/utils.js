@@ -108,7 +108,16 @@ const commonKeys = (obj1, obj2) => {
  * @param {Boolean} asc - True si on trie en ordre croissant. False pour décroissant
  * @returns {Array} Tableau trié
  */
-const sortByAuthorAndTitle = undefined
+const sortByAuthorAndTitle = (arr, asc = true) => {
+	return arr.sort((a, b) => {
+		if (a.author > b.author) { return asc ? 1 : -1; }
+		if (a.author < b.author) { return asc ? -1 : 1; }
+		if (a.title > b.title) { return asc ? 1 : -1; }
+		if (a.title < b.title) { return asc ? -1 : 1; }
+		
+		return 0;
+	});
+}
 
 /**
  * Convertit une fonction de trois paramètre non-currifiée vers une fonction currifiée de 3 paramètres.
