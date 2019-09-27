@@ -4,7 +4,7 @@ import { genererCompteur, charCounts, daysToChristmas, commonKeys, distinct, sor
 
 describe('Exercices de préparation en Javascript (Langage)', function () {
 
-  describe('genererCompteur', function () {
+  describe.only('genererCompteur', function () {
     it('devrait retourner la prochaine valeur en série à partir d\'une valeur initiale', function () {
       let c1 = genererCompteur(0)
       expect(c1()).to.equal(1)
@@ -15,7 +15,7 @@ describe('Exercices de préparation en Javascript (Langage)', function () {
     })
   })
 
-  describe('charCounts', function () {
+  describe.only('charCounts', function () {
     it("devrait retourner toutes les occurrences des lettres d'une chaîne de caractères", function () {
       let occurrences = charCounts('laval')
       let expectedValue = {'l': 2, 'a': 2, 'v': 1}
@@ -35,7 +35,7 @@ describe('Exercices de préparation en Javascript (Langage)', function () {
     })
   })
 
-  describe('daysToChristmas', function () {
+  describe.only('daysToChristmas', function () {
     it('devrait retourner le nombre de jours avant le 25 décembre', function () {
       let cmas = new Date(2018, 11, 25)
       expect(daysToChristmas(cmas)).to.equal(0)
@@ -50,20 +50,20 @@ describe('Exercices de préparation en Javascript (Langage)', function () {
     })
   })
 
-  describe('commonKeys', function () {
+  describe.only('commonKeys', function () {
     it('devrait donner les clés partagées par deux objets', function () {
       expect(commonKeys({x: 1, y: 2}, {x: 2, z: 4})).to.deep.equal(['x'])
     })
   })
 
-  describe('distinct', function () {
+  describe.only('distinct', function () {
     it("devrait retirer les éléments dupliqués d'un tableau Javascript", function () {
       let arr = [6, 1, 2, 2, 3, 4, 5, 3]
       expect(distinct(arr)).to.deep.equal([6, 1, 2, 3, 4, 5])
     })
   })
 
-  describe('sortByAuthorAndTitle', function () {
+  describe.only('sortByAuthorAndTitle', function () {
     it("devrait trier un tableau d'objets selon l'attribut author et title", function () {
       let arr = [
         { author: 'Michel Michaud', title: 'Sous la surface' },
