@@ -90,7 +90,7 @@ describe('Exercices de préparation en Javascript (Langage)', function () {
     })
   })
 
-  describe('curry3', function () {
+  describe.only('curry3', function () {
     it("devrait convertir une fonction de 3 paramètre en une fonction de 3 paramètres currifiée", function () {
       const sum = (x, y, z) => x + y + z
       expect(curry3(sum)(10)(5)(3)).to.equal(18)

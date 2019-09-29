@@ -136,7 +136,9 @@ const sortByAuthorAndTitle = (arr, asc = true) => {
  * @param {any} z - 3e paramètre
  * @returns {Function} Fonction currifiée
  */
-const curry3 = undefined
+const curry3 = (fun) => {
+	return x => y => z => fun(x, y, z);
+}
 
 /**
  * Applique une fonction de rappel sur chaque élément d'un tableau et retourne
