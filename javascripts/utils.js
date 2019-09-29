@@ -42,10 +42,6 @@ const charCounts = (str) => {
 	return dict;
 }
 
-// acc : accumulateur
-// x : élément dans lequel on itère
-// a.reduce((acc, x) => acc + x, 0 /* valeur par défaut */) // => somme des éléments d'un tableau
-
 /**
  * Retourne un entier qui représente le nombre de jours restants jusqu'au prochain jour de Noël.
  *
@@ -157,7 +153,14 @@ const curry3 = (fun) => {
  * @returns {Array}
  */
 function map(arr, callback) {
-	return undefined
+	/* Première façon de faire */
+	// const res = [];
+	// arr.forEach(elem => res.push(callback(elem)));
+
+	/* Deuxième façon de faire */
+	arr.forEach((elem, index, array) => array[index] = callback(elem));
+
+	return arr;
 }
 
 /**

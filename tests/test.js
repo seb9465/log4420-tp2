@@ -102,7 +102,7 @@ describe('Exercices de préparation en Javascript (Langage)', function () {
     })
   })
 
-  describe('map', function () {
+  describe.only('map', function () {
     it("devrait transformer chaque élément d'un tableau selon une fonction callback", function () {
       expect(map([1, 2, 3], x => x * 2)).to.deep.equal([2, 4, 6])
       expect(map([1, 2, 3], x => x + '' + x)).to.deep.equal(['11', '22', '33'])
