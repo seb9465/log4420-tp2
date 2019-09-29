@@ -235,7 +235,7 @@ function fold(arr, init, op) {
  */
 class Employee {
 
-	constructor(id, name, salary) {
+	constructor (id, name, salary) {
 		this._id = id;
 		this._name = name;
 		this._salary = salary;
@@ -263,7 +263,17 @@ class Employee {
  * const e = new Chercheur(1, 'Konstantinos', 50000, 10)
  * e.toString() // Renvoie 'Employee name=Konstantinos,salary=50000,bonus=10
  */
-class Chercheur {
+class Chercheur extends Employee {
+	constructor (id, name, salary, bonus) {
+		super(id, name, salary);
+		this._bonus = bonus;
+
+		this._salary = Math.round(this._salary * (1 + this._bonus/100));
+	}
+
+	toString () {
+		return `${super.toString()},bonus=${this._bonus}`;
+	}
 }
 
 export {
