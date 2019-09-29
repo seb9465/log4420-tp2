@@ -165,7 +165,7 @@ describe('Exercices de préparation en Javascript (Langage)', function () {
     })
 
     it('devrait avoir une méthode toString qui étend la méthode toString de la classe parente et qui ajoute l\'attribut bonus', () => {
-      expect(e.toString()).to.equal('Employee name=Konstantinos,salary=50000,bonus=10')
+      expect(e.toString()).to.equal('Employee name=Konstantinos,salary=55000,bonus=10')
     })
   })
 })
