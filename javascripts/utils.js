@@ -180,7 +180,10 @@ function map(arr, callback) {
  * @returns {Array}
  */
 function find(arr, predicate) {
-	return undefined
+	/* Première façon de faire */
+	arr = arr.filter(predicate);
+	
+	return arr.length > 0 ? arr[0] : null;
 }
 
 /**

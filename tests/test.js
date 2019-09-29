@@ -109,7 +109,7 @@ describe('Exercices de préparation en Javascript (Langage)', function () {
     })
   })
 
-  describe('find', function () {
+  describe.only('find', function () {
     it("devrait trouver le premier élément d'un tableau qui satisfait un prédicat", function () {
       expect(find([1, 4, 3], x => x > 2)).to.equal(4)
     })
