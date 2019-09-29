@@ -119,7 +119,7 @@ describe('Exercices de préparation en Javascript (Langage)', function () {
     })
   })
 
-  describe('fold', function () {
+  describe.only('fold', function () {
     it("devrait appliquer une fonction sur chaque élément d'un tableau et de récupérer le résutlats dans un accumulateur", function () {
       expect(fold([1, 2, 3, 4, 5], 0, (acc, x) => acc + x)).to.equal(15)
       expect(fold([1, 2, 3], [], (acc, x) => [...acc, x ** 2])).to.deep.equal([1, 4, 9])

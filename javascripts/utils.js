@@ -182,7 +182,7 @@ function map(arr, callback) {
 function find(arr, predicate) {
 	/* Première façon de faire */
 	arr = arr.filter(predicate);
-	
+
 	return arr.length > 0 ? arr[0] : null;
 }
 
@@ -218,7 +218,7 @@ function find(arr, predicate) {
  * @returns {S} Accumulateur
  */
 function fold(arr, init, op) {
-	return undefined
+	return arr.reduce(op, init);
 }
 
 /**
