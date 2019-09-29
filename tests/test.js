@@ -126,7 +126,7 @@ describe('Exercices de préparation en Javascript (Langage)', function () {
     })
   })
 
-  describe('Employee', function () {
+  describe.only('Employee', function () {
     const id = 1
     const name = 'Konstantinos'
     const salary = 50000

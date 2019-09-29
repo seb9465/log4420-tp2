@@ -234,6 +234,22 @@ function fold(arr, init, op) {
  * e.toString() // Renvoie 'Employee name=Konstantinos,salary=50000
  */
 class Employee {
+
+	constructor(id, name, salary) {
+		this._id = id;
+		this._name = name;
+		this._salary = salary;
+	}
+
+	set name(name) { this._name = name; }
+	
+	get id() { return this._id; }
+	get name() { return this._name; }
+	get salary() { return this._salary; }
+
+	toString () {
+		return `Employee name=${this._name},salary=${this._salary}`;
+	}
 }
 
 /**
