@@ -9,9 +9,7 @@
  * genererCompteur() // Renvoie 3
  */
 const genererCompteur = (x) => {
-	return () => {
-		return x += 1;
-	}
+	return () => x += 1 ;
 }
 
 /**
@@ -29,9 +27,9 @@ const genererCompteur = (x) => {
 const charCounts = (str) => {
 	let dict = {};
 
-	str.toLowerCase().split("").map(letter => {
-		if (letter.match(/[a-z]/i)) {
-			if (letter in dict) {
+	str.toLowerCase().split("").map(letter => {	// Tous les caractères en minuscule.
+		if (letter.match(/[a-z]/i)) {			// Caractère alpha seulement.
+			if (letter in dict) {				// Calcul d'occurence.
 				dict[letter] += 1;
 			} else {
 				dict[letter] = 1;
@@ -51,11 +49,13 @@ const charCounts = (str) => {
  * @returns {number} Nombre de jours jusqu'à Noël prochain.
  */
 const daysToChristmas = (date) => {
-	const year = (date.getMonth() === 11 && date.getDate() > 25) ? date.getFullYear() + 1 : date.getFullYear();
+	const year = (date.getMonth() === 11 && date.getDate() > 25) ?	// Récupération de l'année du prochain Noel.
+		date.getFullYear() + 1 :
+		date.getFullYear();
 	const nextChristmas = new Date(year, 11, 25);
-	const dateDiff = Math.abs(nextChristmas - date);
+	const dateDiff = Math.abs(nextChristmas - date);				// Retourne une différence en millisecondes.
 
-	return Math.ceil(dateDiff / (1000 * 60 * 60 * 24));
+	return Math.ceil(dateDiff / (1000 * 60 * 60 * 24));				// Conversion de millisecondes en jours.
 }
 
 /**
@@ -70,9 +70,8 @@ const daysToChristmas = (date) => {
  * @returns {Array} Tableau sans éléments dupliqués
  */
 const distinct = (arr) => {
-	return arr.filter((elem, index) => {
-		return arr.indexOf(elem) >= index;
-	});
+	// Si le retour de `indexOf` est plus grand que la valeur de l'index courant, c'est qu'il y a un doublon.
+	return arr.filter((elem, index) => arr.indexOf(elem) >= index);
 }
 
 /**
@@ -101,7 +100,7 @@ const commonKeys = (obj1, obj2) => {
  *
  * Notion: Trie de tableaux avec .sort(comparator)
  * @param {Array} arr - Tableau à trié
- * @param {Boolean} asc - True si on trie en ordre croissant. False pour décroissant
+ * @param {Boolean} asc - True si on trie en ordre croissant. False pour décroissant. Optionnel forcé à `true`.
  * @returns {Array} Tableau trié
  */
 const sortByAuthorAndTitle = (arr, asc = true) => {
@@ -133,7 +132,7 @@ const sortByAuthorAndTitle = (arr, asc = true) => {
  * @returns {Function} Fonction currifiée
  */
 const curry3 = (fun) => {
-	return x => y => z => fun(x, y, z);
+	return x => y => z => fun(x, y, z);	// Renvoie la fonction 2 fois avant d'appeller la fonction `fun` avec les trois paramètres.
 }
 
 /**
