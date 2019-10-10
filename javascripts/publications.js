@@ -8,9 +8,16 @@ const Publications = () => {
 		$(publicationsLinkSelector).addClass('active');
 	}
 
+	function handleDeleteIconButton () {
+		$('.del-icon').click((event) => {
+			$(event.target).closest('tr').remove();
+		});
+	}
+
 	return {
 		init: () => {
 			setNavBarActiveButton();
+			handleDeleteIconButton();
 		}
 	}
 };
