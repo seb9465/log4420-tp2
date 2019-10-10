@@ -1,4 +1,7 @@
 
+/* jQuery selector for the home naviguation link in the header */
+const homeLinkSelector = '#home-link';
+
 $(document).ready(() => {
-	$('#home-link').addClass('active');
+	$(homeLinkSelector).addClass('active');
 });
