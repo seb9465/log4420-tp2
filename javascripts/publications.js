@@ -1,3 +1,4 @@
+'use strict'
 
 /* jQuery selector for the publications navigation link in the header */
 const publicationsLinkSelector = '#publications-link';
@@ -15,6 +16,7 @@ const Publications = () => {
 		const sortByQueryStringValue = _getParameterByName('sort_by');
 		const orderByQueryStringValue = _getParameterByName('order_by');
 		const limitQueryStringValue = _getParameterByName('limit');
+		const pageQueryStringValue = _getParameterByName('page');
 
 		if (sortByQueryStringValue) {
 			$('#fieldFilterSection').val(sortByQueryStringValue);
@@ -24,6 +26,13 @@ const Publications = () => {
 		}
 		if (limitQueryStringValue) {
 			$('#elementsPerPageSection').val(limitQueryStringValue);
+		} else {
+			$('#elementsPerPageSection').val(10);
+		}
+		if (pageQueryStringValue) {
+			$(`a.pagination-link[data-pagenumber="${pageQueryStringValue}"]`).addClass('active');
+		} else {
+			$(`a.pagination-link[data-pagenumber="1"]`).addClass("active");
 		}
 	}
 
