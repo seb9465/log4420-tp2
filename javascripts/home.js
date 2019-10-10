@@ -3,6 +3,7 @@ const homeLinkSelector = '#home-link';
 
 $(document).ready(() => {
 	$(homeLinkSelector).addClass('active');
+	loadDescription();
 });
 
 function loadDescription() {
@@ -17,4 +18,4 @@ function loadDescription() {
     xhttp.open("GET", "api/description", true);
     xhttp.send();
 }
-loadDescription();
+
