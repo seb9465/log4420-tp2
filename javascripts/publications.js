@@ -11,10 +11,33 @@ const Publications = () => {
 		$(publicationsLinkSelector).addClass('active');
 	}
 
+	function setParamsFromUrl () {
+		if (_getParameterByName('sort_by')) {
+			$('#fieldFilterSection').val(_getParameterByName('sort_by'));
+		}
+		if (_getParameterByName('order_by')) {
+			$('#filterAscValueSection').val(_getParameterByName('order_by'));
+		}
+		if (_getParameterByName('limit')) {
+			$('#elementsPerPageSection').val(_getParameterByName('limit'));
+		}
+	}
+
 	function handleDeleteIconButton () {
 		$(deleteIconSelector).click((event) => {
 			$(event.target).closest('tr').remove();
 		});
+	}
+
+	// https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+	function _getParameterByName (name, url) {
+		if (!url) url = window.location.href;
+		name = name.replace(/[\[\]]/g, '\\$&');
+		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, ' '));
 	}
 
 	// https://stackoverflow.com/questions/5999118/how-can-i-add-or-update-a-query-string-parameter
@@ -75,6 +98,7 @@ const Publications = () => {
 	return {
 		init: () => {
 			setNavBarActiveButton();
+			setParamsFromUrl();
 			handleDeleteIconButton();
 			handleFilterByClick();
 			handleOrderByClick();
