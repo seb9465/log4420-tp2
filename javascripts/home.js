@@ -1,5 +1,5 @@
 
-/* jQuery selector for the home naviguation link in the header */
+/* jQuery selector for the home navigation link in the header */
 const homeLinkSelector = '#home-link';
 
 $(document).ready(() => {

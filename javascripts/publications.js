@@ -1,5 +1,5 @@
 
-/* jQuery selector for the publications naviguation link in the header */
+/* jQuery selector for the publications navigation link in the header */
 const publicationsLinkSelector = '#publications-link';
 
 $(document).ready(() => {
