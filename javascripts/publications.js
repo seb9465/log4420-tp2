@@ -12,14 +12,18 @@ const Publications = () => {
 	}
 
 	function setParamsFromUrl () {
-		if (_getParameterByName('sort_by')) {
-			$('#fieldFilterSection').val(_getParameterByName('sort_by'));
+		const sortByQueryStringValue = _getParameterByName('sort_by');
+		const orderByQueryStringValue = _getParameterByName('order_by');
+		const limitQueryStringValue = _getParameterByName('limit');
+
+		if (sortByQueryStringValue) {
+			$('#fieldFilterSection').val(sortByQueryStringValue);
 		}
-		if (_getParameterByName('order_by')) {
-			$('#filterAscValueSection').val(_getParameterByName('order_by'));
+		if (orderByQueryStringValue) {
+			$('#filterAscValueSection').val(orderByQueryStringValue);
 		}
-		if (_getParameterByName('limit')) {
-			$('#elementsPerPageSection').val(_getParameterByName('limit'));
+		if (limitQueryStringValue) {
+			$('#elementsPerPageSection').val(limitQueryStringValue);
 		}
 	}
 
