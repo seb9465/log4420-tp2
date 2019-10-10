@@ -29,10 +29,45 @@ const Publications = () => {
 		}
 	}
 
-	function handleFilterBy () {
-		$('#fieldFilterSection').on('change', (event) => {
-			const newValue = $( "#fieldFilterSection option:selected" ).text()
+	function handleFilterByClick () {
+		$('#fieldFilterSection').on('change', () => {
+			const newValue = $( "#fieldFilterSection option:selected" ).val()
 			const newUrl = _updateQueryStringParameter(window.location.href, 'sort_by', newValue);
+			window.location.href = newUrl;
+		});
+	}
+
+	function handleOrderByClick () {
+		$('#filterAscValueSection').on('change', () => {
+			const newValue = $( "#filterAscValueSection option:selected" ).val()
+			const newUrl = _updateQueryStringParameter(window.location.href, 'order_by', newValue);
+			window.location.href = newUrl;
+		});
+	}
+
+	function handlePaginationLinkClick () {
+		$('.pagination-link').click((event) => {
+			const clickedElem = $(event.target);
+
+			if (clickedElem.hasClass('previous')) {
+				const newValue = clickedElem.next('a').attr('data-pagenumber');
+				const newUrl = _updateQueryStringParameter(window.location.href, 'page', newValue);
+				window.location.href = newUrl;
+			} else if (clickedElem.hasClass('next')) {
+				const newValue = clickedElem.prev('a').attr('data-pagenumber');
+				const newUrl = _updateQueryStringParameter(window.location.href, 'page', newValue);
+				window.location.href = newUrl;
+			} else {
+				const newUrl = _updateQueryStringParameter(window.location.href, 'page', clickedElem.attr('data-pagenumber'));
+				window.location.href = newUrl;
+			}
+		})
+	}
+
+	function handleElemsPerPageClick () {
+		$('#elementsPerPageSection').on('change', () => {
+			const newValue = $( "#elementsPerPageSection option:selected" ).val()
+			const newUrl = _updateQueryStringParameter(window.location.href, 'limit', newValue);
 			window.location.href = newUrl;
 		});
 	}
@@ -41,7 +76,10 @@ const Publications = () => {
 		init: () => {
 			setNavBarActiveButton();
 			handleDeleteIconButton();
-			handleFilterBy();
+			handleFilterByClick();
+			handleOrderByClick();
+			handlePaginationLinkClick();
+			handleElemsPerPageClick();
 		}
 	}
 };
