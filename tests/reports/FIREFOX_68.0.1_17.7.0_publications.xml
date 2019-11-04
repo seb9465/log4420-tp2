@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="publications"
+    errors="0" failures="1" hostname="" id="" package="publications" skipped="0"
+    tests="1" time="7.048" timestamp="">
+  
+    <testcase name="Page de publications" classname="publications" time="7.048" assertions="24">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="Testing if the URL contains &#34;page=1&#34; in 1000 ms. - expected [0;32m&#34;page=1&#34;[0m but got: [0;31m&#34;http://localhost:3000/publications?order_by=asc&amp;page=3&amp;limit=50&#34;[0m">    at NightwatchAPI.Page de publications.client.execute.result (/Users/sebastiencadorette/Documents/git/log4420-tp2/tests/e2e/publications.js:77:19)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+
+    <failure message="    at NightwatchAPI.Page de publications.client.execute.result (/Users/sebastiencadorette/Documents/git/log4420-tp2/tests/e2e/publications.js:77:19)">    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>
